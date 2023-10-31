@@ -3,14 +3,13 @@ import org.junit.jupiter.api.Test;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class HomeWork {
+public class TestDemoqa {
 
     @BeforeAll
     static void beforeAll() {
@@ -43,15 +42,15 @@ public class HomeWork {
 
         $("#submit").pressEnter();
 
-        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Alisa Igorevna?"));
-        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("alex222@egorov.com?"));
-        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female?"));
-        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("7542378678?"));
-        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("28 September,2019?"));
-        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English?"));
-        $(".table-responsive").$(byText("Picturel")).parent().shouldHave(text("scrin.png?"));
-        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("g.Maxachkola ul. rambler d.11. kv.14?"));
-        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida?"));
+        $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Alisa Igorevna"));
+        $(".table-responsive").$(byText("Student Email")).parent().shouldHave(text("alex222@egorov.com"));
+        $(".table-responsive").$(byText("Gender")).parent().shouldHave(text("Female"));
+        $(".table-responsive").$(byText("Mobile")).parent().shouldHave(text("7542378678"));
+        $(".table-responsive").$(byText("Date of Birth")).parent().shouldHave(text("28 September,2019"));
+        $(".table-responsive").$(byText("Subjects")).parent().shouldHave(text("English"));
+        $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("scrin.png"));
+        $(".table-responsive").$(byText("Address")).parent().shouldHave(text("g.Maxachkola ul. rambler d.11. kv.14"));
+        $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
 
     }
 }
