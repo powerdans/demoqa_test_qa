@@ -6,8 +6,7 @@ import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestDemoqa {
 
@@ -16,7 +15,7 @@ public class TestDemoqa {
         Configuration.browserSize = "1600x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
+
 
     }
 
@@ -51,6 +50,8 @@ public class TestDemoqa {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("scrin.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("g.Maxachkola ul. rambler d.11. kv.14"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
     }
 }
