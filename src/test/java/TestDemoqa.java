@@ -22,6 +22,8 @@ public class TestDemoqa {
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("Alisa");
         $("#lastName").setValue("Igorevna");
         $("#userEmail").setValue("alex222@egorov.com");
@@ -50,8 +52,8 @@ public class TestDemoqa {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("scrin.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("g.Maxachkola ul. rambler d.11. kv.14"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Noida"));
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+
+
 
     }
 }
